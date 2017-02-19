@@ -1,0 +1,7 @@
+<label> Filters : </label>
+<md-input-container>
+  <md-select ng-model="$ctrl.filters.contactType" ng-change="$ctrl.onFiltersChanged({filters: $ctrl.filters})" placeholder="Select a type of contact">
+    <md-option ng-value="opt" ng-repeat="opt in $ctrl.filterOptions.contactType">{{ opt }}</md-option>
+  </md-select>
+</md-input-container>
+<md-button class="md-primary md-raised" ng-click="$ctrl.clearFilters();">Clear filters</md-button>

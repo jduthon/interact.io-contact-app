@@ -1,0 +1,60 @@
+<md-card>
+  <md-card-header>
+    <md-card-avatar>
+      <img class="md-user-avatar" ng-src="{{$ctrl.contact.profilePicture}}">
+    </md-card-avatar>
+    <md-card-header-text>
+      <span class="md-title">{{$ctrl.contact.displayName}}</span>
+      <span class="md-subhead">{{$ctrl.contact.title}}</span>
+    </md-card-header-text>
+  </md-card-header>
+  <md-card-content>
+    <md-list>
+      <md-list-item>
+        Company : {{$ctrl.contact.companyName}}
+      </md-list-item>
+      <md-list-item>
+        Nationality : {{$ctrl.contact.nationality}}
+      </md-list-item>
+      <md-list-item>
+        Birthday : {{$ctrl.contact.birthday}}
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center" class="layout-align-end-center layout-row">
+    <a href="mailto:{{$ctrl.primaryEmail}}">
+      <button class="md-icon-button md-button md-ink-ripple" type="button" aria-label="Send mail" ng-disabled="!$ctrl.primaryEmail">
+        <md-icon>email</md-icon>
+        <div class="md-ripple-container">
+        </div>
+      </button>
+    </a>
+    <a href="tel:{{$ctrl.primaryPhoneNumber}}">
+      <button class="md-icon-button md-button md-ink-ripple" type="button" aria-label="Call" ng-disabled="!$ctrl.primaryPhoneNumber">
+        <md-icon>call</md-icon>
+        <div class="md-ripple-container">
+        </div>
+      </button>
+    </a>
+    <button class="md-icon-button md-button md-ink-ripple"
+            type="button"
+            aria-label="Edit"
+            ng-click="$ctrl.onEdit();">
+
+      <md-icon>mode_edit</md-icon>
+      <div class="md-ripple-container">
+      </div>
+
+    </button>
+    <button class="md-icon-button md-button md-ink-ripple"
+            type="button"
+            aria-label="Delete"
+            ng-click="$ctrl.onDelete();">
+
+      <md-icon>delete</md-icon>
+      <div class="md-ripple-container">
+      </div>
+
+    </button>
+  </md-card-actions>
+</md-card>
