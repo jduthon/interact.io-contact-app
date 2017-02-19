@@ -1,0 +1,23 @@
+<md-card flex>
+  <md-card-content>
+    <md-list>
+      <form name="loginForm">
+        <md-list-item>
+          <md-input-container flex>
+            <label>Username</label>
+            <input type="text" ng-model="$ctrl.user.username" name="name">
+          </md-input-container>
+        </md-list-item>
+        <md-list-item>
+          <md-input-container flex>
+            <label>Password</label>
+            <input type="password" ng-model="$ctrl.user.password" name="password">
+          </md-input-container>
+        </md-list-item>
+        <md-list-item layout-align="center">
+          <md-button class="md-primary md-raised" ng-click="$ctrl.login();">Login</md-button>
+        </md-list-item>
+      </form>
+    </md-list>
+  </md-card-content>
+</md-card>
