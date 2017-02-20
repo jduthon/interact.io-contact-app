@@ -11,13 +11,10 @@
   <md-card-content>
     <md-list>
       <md-list-item>
-        Company : {{$ctrl.contact.companyName}}
-      </md-list-item>
-      <md-list-item>
         Nationality : {{$ctrl.contact.nationality}}
       </md-list-item>
       <md-list-item>
-        Birthday : {{$ctrl.contact.birthday}}
+        Birthday : {{$ctrl.contact.birthday | date:'yyyy/MM/dd'}}
       </md-list-item>
     </md-list>
   </md-card-content>
