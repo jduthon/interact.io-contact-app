@@ -3,12 +3,17 @@ import uiRouter from 'angular-ui-router';
 import layout from './layout.html';
 
 import contactsModule from './contacts/contacts';
+import navBarModule from './navBar/navBar';
+
+import MainController from './main.controller.js';
+
 
 import './main.scss';
 
 let authenticationModule = angular.module('interact.main', [
   uiRouter,
-  contactsModule
+  contactsModule,
+  navBarModule
 ])
 
   .config(($stateProvider) => {
@@ -19,6 +24,8 @@ let authenticationModule = angular.module('interact.main', [
         url: '/app',
         abstract: true,
         template: layout,
+        controller: MainController,
+        controllerAs: '$ctrl',
         resolve: {
           isAuthenticated: function(AuthService, $state){
             if(!AuthService.isAuthenticated()){

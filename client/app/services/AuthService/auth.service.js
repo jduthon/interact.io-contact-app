@@ -10,6 +10,7 @@ class AuthService {
     return this.InteractApiService.postUrl(this.loginPath, false, credentials).then(
       response => {
         const data = response.data;
+        this.user = data.user;
         this.InteractApiService.setAuthToken(data.token.authToken);
         return data.user;
       }
@@ -30,6 +31,10 @@ class AuthService {
 
   isAuthenticated(){
     return this.InteractApiService.getAuthToken() !== undefined;
+  }
+
+  getUser(){
+    return this.user;
   }
 }
 

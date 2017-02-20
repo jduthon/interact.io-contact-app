@@ -1,0 +1,11 @@
+<md-toolbar md-sticky layout="row">
+  <div class="md-toolbar-tools">
+    <h2 flex>Interact.io</h2>
+    <div flex class="user-profile-toolbar">
+      {{$ctrl.user.firstName}} {{$ctrl.user.lastName}}
+    </div>
+    <md-button class="md-icon-button" aria-label="Logout" ng-click="$ctrl.onLogout()">
+      <md-icon>exit_to_app</md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
