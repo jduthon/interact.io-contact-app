@@ -93,6 +93,10 @@ class interactApiService {
   deleteUrl(url, authenticated, data = undefined){
     return this._processDataUrl('DELETE', url, authenticated, data);
   }
+
+  putUrl(url, authenticated, data = undefined){
+    return this._processDataUrl('PUT', url, authenticated, data);
+  }
 }
 
 export default interactApiService;

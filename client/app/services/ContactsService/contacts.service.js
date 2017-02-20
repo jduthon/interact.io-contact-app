@@ -13,12 +13,30 @@ class ContactsService {
     )
   }
 
+  _buildOneContactPath(contactId){
+    return `${this.contactsPath}/${contactId}`;
+  }
+
   deleteContact(contactId){
-    const deletePath = `${this.contactsPath}/${contactId}`;
+    const deletePath = this._buildOneContactPath(contactId);
     return this.InteractApiService.deleteUrl(deletePath, true).then(
       response => response.data
     )
   }
+
+  updateContact(contact){
+    const updatePath = this._buildOneContactPath(contact.id);
+    return this.InteractApiService.putUrl(updatePath, true, contact).then(
+      response => response.data
+    );
+  }
+
+  createContact(contact) {
+    return this.InteractApiService.postUrl(this.contactsPath, true, contact).then(
+      response => response.data
+    );
+  }
+
 
   _getPrimaryX(contact, x){
     if(contact[x]){

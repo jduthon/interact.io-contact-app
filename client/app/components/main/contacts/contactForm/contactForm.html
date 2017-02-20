@@ -1,0 +1,36 @@
+<form name="contactForm">
+  <md-list>
+    <md-list-item>
+      <md-input-container>
+        <label>First name</label>
+        <input type="text" ng-model="$ctrl.contact.firstName" name="firstName">
+      </md-input-container>
+    </md-list-item>
+
+    <md-list-item>
+      <md-input-container>
+        <label>Last name</label>
+        <input type="text" ng-model="$ctrl.contact.lastName" name="lastName">
+      </md-input-container>
+    </md-list-item>
+
+    <md-list-item>
+      <md-input-container>
+        <label>Title</label>
+        <input type="text" ng-model="$ctrl.contact.title" name="title">
+      </md-input-container>
+    </md-list-item>
+
+    <md-list-item>
+      <md-input-container>
+        <label>Birthday</label>
+        <md-datepicker ng-model="$ctrl.contact.birthday"></md-datepicker>
+      </md-input-container>
+    </md-list-item>
+
+    <md-list-item>
+      <md-button class="md-primary md-raised" ng-click="$ctrl.onSubmit({contact: $ctrl.contact})">Submit</md-button>
+      <md-button class="md-primary md-raised" ng-click="$ctrl.onCancel()">Cancel</md-button>
+    </md-list-item>
+  </md-list>
+</form>

@@ -2,6 +2,9 @@
   <contacts-filter filter-options="$ctrl.filterOptions" on-filters-changed="$ctrl.filtersChanged(filters)"></contacts-filter>
 </div>
 <div layout="row" layout-wrap>
+  <md-button class="md-fab md-primary md-mini float-right" aria-label="Add" ng-click="$ctrl.openContactForm();">
+    <md-icon>add</md-icon>
+  </md-button>
   <contact-card ng-repeat="contact in $ctrl.contacts track by contact.id"
                 contact="contact"
                 on-edit="$ctrl.editContact(contact);"
