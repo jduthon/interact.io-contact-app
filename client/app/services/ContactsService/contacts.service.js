@@ -26,6 +26,7 @@ class ContactsService {
 
   updateContact(contact){
     const updatePath = this._buildOneContactPath(contact.id);
+    contact.updated = Date.now();
     return this.InteractApiService.putUrl(updatePath, true, contact).then(
       response => response.data
     );
